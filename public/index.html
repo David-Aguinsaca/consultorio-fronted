@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+    <link rel="stylesheet" href="./css/my-styles.css" >
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Incio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./ui/sure.html">Seguros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./ui/insured.html">Asegurados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ui/sure-insured.html">Asignar Seguro</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        Consultorio de Seguros
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main-index">
+        <h3>Buscar Asegurado</h3>
+        <div id="formFileMultiple" class="form-text">Buscar por identificación del asegurado o por el codigo del seguro</div>
+        <br>
+        <table id="table-sure-insured" class="table table-striped"  width="100%" height="100%">
+            <thead>
+                <tr>
+                    <th>Identificación</th>
+                    <th>Nombre Asegurado</th>
+                    <th>Codigo Seguro</th>
+                    <th>Nombre Seguro</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <!-- Pie de página (información de contacto, derechos de autor, etc.) -->
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/index.js" ></script>
+</body>
+
+</html>

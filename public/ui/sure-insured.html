@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asignar Seguro</title>
+    <link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/my-styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">Incio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../ui/sure.html">Seguros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../ui/insured.html">Asegurados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Asignar Seguro</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        Consultorio de Seguros
+                    </span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main id="main-index">
+        <div>
+            <h2>Asignar seguro(s)</h2>
+            <form id="">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Selecionar asegurado</label>
+                    <select id="select-insured" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                    <option value="0">Selecionar</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="code" class="form-label">Selecionar seguro</label>
+
+                    <div id="checkboxContainer">
+                    </div>
+                </div>
+                <div class="mb-3" id="div-btn-save">
+                    <button class="btn btn-block btn-primary" id="btn-create-sure">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 David Aguinsaca - Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/sureinsured.js"></script>
+</body>
+
+</html>
