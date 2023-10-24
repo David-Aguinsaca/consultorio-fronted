@@ -3,27 +3,44 @@ $(document).ready(function () {
     const HOST = 'https://localhost:7240';
 
     //crear asegurados
+
+
     $('#btn-save-form').click(function (event) {
         event.preventDefault();
-        var formData = {
-            identification: $("#identification").val(),
-            name: $("#name").val(),
-            phone: $("#phone").val(),
-            age: $("#age").val()
-        };
 
-        $.ajax({
-            type: 'POST',
-            url: HOST + '/api/Insured/CreateInsured',
-            data: JSON.stringify(formData),
-            contentType: "application/json",
-            success: function (response) {
-                location.reload();
-            },
-            error: function (error) {
-                console.log('Error:', error);
-            }
-        });
+        var identification = $("#identification").val();
+        var name = $("#name").val();
+        var phone = $("#phone").val();
+
+        if (identification === "" || name === "" || phone === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Llenar todos los campos!'
+            });
+        } else {
+            var formData = {
+                identification: identification,
+                name: name,
+                phone: phone,
+                age: $("#age").val()
+            };
+            
+            $.ajax({
+                type: 'POST',
+                url: HOST + '/api/Insured/CreateInsured',
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        }
+
+
     });
 
     //mostrar asegurados
@@ -171,7 +188,24 @@ $(document).ready(function () {
 
     $('#formFileMultiple').MultiFile({
         accept: 'xlsx|txt|xlsm|xlsb|xltx',
-        list: '#demo1-list'
+        list: '#demo1-list',
+
+    });
+
+    $(".validarNumerosCaracteres").on("input", function() {
+        var input = $(this);
+        var valor = input.val();
+        
+        // Usamos una expresión regular para permitir solo números
+        var numeros = valor.replace(/[^0-9]/g, '');
+        
+        // Actualizamos el valor del campo de entrada solo con números
+        input.val(numeros);
+
+        if (valor.length > 10) {
+            // Si es mayor, truncamos el valor a 10 caracteres
+            input.val(valor.slice(0, 10));
+        }
     });
 
 

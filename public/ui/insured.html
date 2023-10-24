@@ -45,23 +45,26 @@
                 <form id="">
                     <div class="mb-3">
                         <label for="nameSure" class="form-label">Cedula</label>
-                        <input type="text" class="form-control" id="identification" name="identification">
+                        <input type="text" class="form-control validarNumerosCaracteres" id="identification"
+                            name="identification" required>
                     </div>
                     <div class="mb-3">
                         <label for="codigoSure" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="name" name="name">
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="sumAseguradaSure" class="form-label">Telefeno</label>
-                        <input type="text" class="form-control" id="phone" name="phone">
+                        <input type="text" class="form-control validarNumerosCaracteres" id="phone" name="phone"
+                            required>
                     </div>
                     <div class="mb-3">
                         <label for="age" class="form-label">Edad</label>
-                        <input type="number" min="18" max="100" class="form-control" id="age" name="age">
+                        <input type="number" min="18" max="100" class="form-control" id="age" name="age" value="18">
                     </div>
                     <div class="mb-3">
                         <label for="formFileMultiple" class="form-label">Archivo (s)</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple name="files[]">
+                        <input class="form-control" type="file" id="formFileMultiple" multiple
+                            name="formFileMultiple[]">
                         <div id="formFileMultiple" class="form-text">Subir uno o varios archivos (excel o txt)</div>
                     </div>
                     <div class="mb-3" id="demo1-list"></div>
@@ -69,8 +72,8 @@
                         <button class="btn btn-block btn-primary" id="btn-save-form">Guardar</button>
                     </div>
                     <div class="mb-3" id="div-btn-edit">
-                        <button type="submit" class="btn btn-block btn-success" id="btn-edit-form" >Editar</button>
-                        <button class="btn btn-block btn-danger" id="btn-cancel" >Cancelar</button>
+                        <button type="submit" class="btn btn-block btn-success" id="btn-edit-form">Editar</button>
+                        <button class="btn btn-block btn-danger" id="btn-cancel">Cancelar</button>
                     </div>
                 </form>
             </div>

@@ -45,26 +45,38 @@ $(document).ready(function () {
     //crear seguros
     $('#btn-create-sure').click(function (event) {
         event.preventDefault();
-        var formData = {
-            identification: $("#identification").val(),
-            name: $("#name").val(),
-            code: $("#code").val(),
-            sumassured: $("#sumassured").val(),
-            prima: $("#prima").val()
-        };
 
-        $.ajax({
-            type: 'POST',
-            url: HOST + "/api/Sure/CreateSure",
-            data: JSON.stringify(formData),
-            contentType: "application/json",
-            success: function (response) {
-                location.reload();
-            },
-            error: function (error) {
-                console.log('Error:', error);
-            }
-        });
+        var name = $("#name").val();
+        var code = $("#code").val();
+
+        if (code === "" || name === "") {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Llenar todos los campos!'
+            });
+        } else {
+            var formData = {
+                name: name,
+                code: code,
+                sumassured: $("#sumassured").val(),
+                prima: $("#prima").val()
+            };
+
+            $.ajax({
+                type: 'POST',
+                url: HOST + "/api/Sure/CreateSure",
+                data: JSON.stringify(formData),
+                contentType: "application/json",
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (error) {
+                    console.log('Error:', error);
+                }
+            });
+        }
+
     });
 
     //eliminar
@@ -158,5 +170,7 @@ $(document).ready(function () {
         event.preventDefault();
         location.reload();
     });
+
+    
 
 });
